@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[project]
+name = "proslenkey"
+version = "1.0.0"
+authors = [
+  { name="hikyae", email="h1ky43@gmail.com" },
+]
+description = "A lightweight GTK4 application launcher for Wayland"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = [
+    "launcher",
+    "app-launcher",
+    "wayland",
+    "sway",
+    "fcitx5",
+    "linux"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+    "PyGObject>=3.54.3",
+]
+
+[project.gui-scripts]
+proslenkey = "src.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/hikyae/proslenkey"
+Issues = "https://github.com/hikyae/proslenkey/issues"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+	"ARG002", # Unused method argument
+	"D100", # Missing docstring in public module
+	"D102", # Missing docstring in public method
+	"D103", # Missing docstring in public function
+	"D107", # Missing docstring in `__init__`
+	"S602", # `subprocess` call with `shell=True` identified, security issue
+	"SIM105", # Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+	"E402", # Module level import not at top of file
+]
