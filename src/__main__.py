@@ -62,6 +62,7 @@ class Launcher(Gtk.Application):
         super().__init__(application_id=f"app.{APP_NAME}")
         self.commands = get_path_commands()
         self.entry: Gtk.Entry
+        self.scroller: Gtk.ScrolledWindow
         self.suggestion_box: Gtk.Box
 
     # ------------------------
@@ -71,10 +72,10 @@ class Launcher(Gtk.Application):
     def do_activate(self) -> None:
         """Build and show the window when the app is activated."""
         self.configure_style()
-        self.window = Gtk.ApplicationWindow(application=self)
-        self.configure_layer_shell(self.window)
-        self.build_ui(self.window)
-        self.window.present()
+        window = Gtk.ApplicationWindow(application=self)
+        self.configure_layer_shell(window)
+        self.build_ui(window)
+        window.present()
 
     # ------------------------
     # UI setup
@@ -231,7 +232,6 @@ class Launcher(Gtk.Application):
             gesture.connect("pressed", self.on_btn_clicked, cmd)
             btn.add_controller(gesture)
 
-            # Disable default space activation
             btn_key_controller = Gtk.EventControllerKey()
             btn_key_controller.connect("key-pressed", self.on_btn_key_pressed)
             btn.add_controller(btn_key_controller)
