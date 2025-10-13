@@ -2,7 +2,7 @@
 
 A lightweight GTK4 application launcher for Wayland
 
-![Screenshot](https://raw.githubusercontent.com/hikyae/proslenkey/main/screenshot.png)
+![Screenshot](https://github.com/user-attachments/assets/ae51c3e6-5118-4828-bb1a-c26f055549a4)
 
 ## 💭 Why?
 
