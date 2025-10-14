@@ -169,7 +169,7 @@ class Launcher(Gtk.Application):
 
         # Suggestions container
         self.scroller = Gtk.ScrolledWindow()
-        self.scroller.hide()
+        self.scroller.set_visible(False)
         self.scroller.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER)
         self.scroller.set_hexpand(True)
 
@@ -239,11 +239,11 @@ class Launcher(Gtk.Application):
             self.suggestion_box.append(btn)
 
     def show_suggestions(self) -> None:
-        self.scroller.show()
+        self.scroller.set_visible(True)
         self.entry.set_hexpand(False)
 
     def hide_suggestions(self) -> None:
-        self.scroller.hide()
+        self.scroller.set_visible(False)
         self.entry.set_hexpand(True)
 
     # ------------------------
