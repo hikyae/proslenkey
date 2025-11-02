@@ -15,7 +15,7 @@ A lightweight GTK4 application launcher for Wayland
 
 -   Lists executables from your `PATH`.
 -   Horizontal list of suggestions.
--   Searches for suggestions based on subsequences.
+-   Searches for suggestions based on subsequences (case insensitive).
 -   Appearance is customizable through CSS.
 
 ## 📋 Requirements

@@ -217,7 +217,7 @@ class Launcher(Gtk.Application):
             self.suggestion_box.remove(child)
             child = next_child
 
-        matches = [command for command in self.commands if subseqmatch(text, command)]
+        matches = [cmd for cmd in self.commands if subseqmatch(text, cmd.lower())]
 
         if not matches:
             self.hide_suggestions()
