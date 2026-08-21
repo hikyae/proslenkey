@@ -261,6 +261,13 @@ class Launcher(Gtk.Application):
         if keyval == Gdk.KEY_Escape:
             self.quit()
             return True
+
+        if keyval == Gdk.KEY_h and state == Gdk.ModifierType.CONTROL_MASK:
+            # `Ctrl+H` is same as `Backspace`
+            self.append_char("\b")
+            self.focus_entry()
+            return True
+
         return False
 
     def on_scroller_key_pressed(
@@ -284,6 +291,12 @@ class Launcher(Gtk.Application):
             Gdk.KEY_Control_R,
         ):
             return False
+
+        if keyval == Gdk.KEY_h and state == Gdk.ModifierType.CONTROL_MASK:
+            # `Ctrl+H` is same as `Backspace`
+            self.append_char("\b")
+            self.focus_entry()
+            return True
 
         # Propagate printable chars to update entry text
         codepoint = Gdk.keyval_to_unicode(keyval)

@@ -52,6 +52,7 @@ Start `proslenkey` from your terminal or a keybinding in your window manager.
 -   **Tab / Shift+Tab:** Cycles through the suggestions.
 -   **Click:** Executes the command in the suggestions.
 -   **Ctrl+Enter / Ctrl+Click:** Puts the focused suggestion into the entry.
+-   **Ctrl+H:** Deletes the last character in the entry (same as Backspace).
 
 ## 🎨 Customization
 
