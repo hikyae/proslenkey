@@ -262,6 +262,11 @@ class Launcher(Gtk.Application):
             self.quit()
             return True
 
+        if keyval == Gdk.KEY_m and state == Gdk.ModifierType.CONTROL_MASK:
+            # `Ctrl+M` is same as `Return`
+            self.on_activate_entry(self.entry)
+            return True
+
         if keyval == Gdk.KEY_h and state == Gdk.ModifierType.CONTROL_MASK:
             # `Ctrl+H` is same as `Backspace`
             self.append_char("\b")
@@ -316,6 +321,13 @@ class Launcher(Gtk.Application):
         if keyval == Gdk.KEY_space:
             self.append_char(" ")
             self.focus_entry()
+            return True
+
+        if keyval == Gdk.KEY_m and state == Gdk.ModifierType.CONTROL_MASK:
+            # `Ctrl+M` is same as `Return`
+            cmd = controller.get_widget().get_label()
+            self.exec_one(cmd)
+            self.quit()
             return True
 
         if keyval == Gdk.KEY_Return:

@@ -47,7 +47,7 @@ pip install -e .
 Start `proslenkey` from your terminal or a keybinding in your window manager.
 
 -   **Typing:** Shows suggestions that match the typed text.
--   **Enter:** Executes the command in the entry or the selected suggestion.
+-   **Enter / Ctrl+M:** Executes the command in the entry or the selected suggestion.
 -   **Escape:** Quits the app.
 -   **Tab / Shift+Tab:** Cycles through the suggestions.
 -   **Click:** Executes the command in the suggestions.
